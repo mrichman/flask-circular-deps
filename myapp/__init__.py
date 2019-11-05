@@ -1,7 +1,6 @@
 from flask import Flask
 
 from myapp.models.classa import ClassA
-from myapp.models.classb import ClassB
 
 
 def create_app():
@@ -10,8 +9,8 @@ def create_app():
     @app.route("/")
     def hello():
         a = ClassA()
-        b = ClassB()
-        return "Hello, World!"
+        b = a.get_b()
+        return "Hello, world!"
 
     return app
 
